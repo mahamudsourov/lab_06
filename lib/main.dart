@@ -17,7 +17,13 @@ class Lab06AdvancedUI extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
-              CachedNetworkImage(imageUrl: 'image.png'),
+              CachedNetworkImage(
+                imageUrl: 'https://unsplash.com/photos/a-person-sitting-at-a-desk-with-a-laptop-and-papers-YDe0nOZyLHI',
+                placeholder: (context, url) => const CircularProgressIndicator(),
+                errorWidget: (context, url, error) => const Image(
+                  image: NetworkImage('https://unsplash.com/photos/a-person-sitting-at-a-desk-with-a-laptop-and-papers-YDe0nOZyLHI')
+                ),
+              ),
               Expanded(
                 child: Image(
                   image: NetworkImage(
@@ -32,3 +38,4 @@ class Lab06AdvancedUI extends StatelessWidget {
     );
   }
 }
+
