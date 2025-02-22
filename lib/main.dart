@@ -19,9 +19,12 @@ class Lab06AdvancedUI extends StatelessWidget {
             children: [
               CachedNetworkImage(imageUrl: 'image.png'),
               Expanded(
-                  child: Image(
-                      image: NetworkImage(
-                          'https://fastly.picsum.photos/id/128/250/250.jpg?hmac=9L99eI5me85crNuYFAdBKKZ9Kp5o0Bhm26NV0cyPtc8')))
+                child: Image(
+                  image: NetworkImage(
+                    'https://fastly.picsum.photos/id/128/250/250.jpg?hmac=9L99eI5me85crNuYFAdBKKZ9Kp5o0Bhm26NV0cyPtc8',
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -29,4 +32,3 @@ class Lab06AdvancedUI extends StatelessWidget {
     );
   }
 }
-
