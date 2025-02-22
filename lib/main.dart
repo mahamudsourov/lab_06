@@ -1,4 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
+//import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,29 +13,50 @@ class Lab06AdvancedUI extends StatelessWidget {
     return MaterialApp(
       title: "Lab - 06",
       home: Scaffold(
-        appBar: AppBar(title: const Text('Lab06 Advanced UI')),
-        body: Center(
-          child: Column(
+        drawer: Drawer(
+          backgroundColor: Colors.grey,
+          child: ListView(
             children: [
-              CachedNetworkImage(
-                imageUrl: 'https://unsplash.com/photos/a-person-sitting-at-a-desk-with-a-laptop-and-papers-YDe0nOZyLHI',
-                placeholder: (context, url) => const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Image(
-                  image: NetworkImage('https://unsplash.com/photos/a-person-sitting-at-a-desk-with-a-laptop-and-papers-YDe0nOZyLHI')
+              DrawerHeader(
+                child: Row(
+                  children: [Icon(Icons.people_alt_rounded), Text("Contacts")],
                 ),
               ),
-              Expanded(
-                child: Image(
-                  image: NetworkImage(
-                    'https://fastly.picsum.photos/id/128/250/250.jpg?hmac=9L99eI5me85crNuYFAdBKKZ9Kp5o0Bhm26NV0cyPtc8',
-                  ),
-                ),
+              ListTile(
+                leading: Icon(Icons.mobile_screen_share),
+                title: Text('Device'),
+                trailing: Text("Anything"),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.mobile_screen_share),
+                title: Text('Device'),
+                trailing: Text("Anything"),
+                onTap: () {},
               ),
             ],
           ),
+        ),
+        appBar: AppBar(
+          title: const Text('Lab06 Advanced UI'),
+          backgroundColor: Colors.amber,
+        ),
+        body: Center(
+          child: Text(
+            "Working with Navigation",
+            style: TextStyle(fontSize: 60),
+          ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: "Settings",
+            ),
+          ],
         ),
       ),
     );
   }
 }
-
