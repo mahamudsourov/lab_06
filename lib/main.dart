@@ -17,8 +17,7 @@ class Lab06AdvancedUI extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
-             CachedNetworkImage(
-              imageUrl: ''),
+              CachedNetworkImage(imageUrl: 'image.png'),
               Expanded(
                   child: Image(
                       image: NetworkImage(
@@ -30,3 +29,4 @@ class Lab06AdvancedUI extends StatelessWidget {
     );
   }
 }
+
